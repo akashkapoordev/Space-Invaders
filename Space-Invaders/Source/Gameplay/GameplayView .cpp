@@ -10,11 +10,13 @@ namespace Gameplay
 	using namespace Graphic;
 	Gameplay::GameplayView::GameplayView()
 	{
-		game_window = nullptr;
+		//game_window = nullptr;
+		createUIElement();
 	}
 
 	Gameplay::GameplayView::~GameplayView()
 	{
+		destroy();
 	}
 
 	void Gameplay::GameplayView::initialize()
@@ -26,7 +28,7 @@ namespace Gameplay
 
 	void Gameplay::GameplayView::update()
 	{
-		gameplayimage_view->setPosition(background_position);
+		//gameplayimage_view->setPosition(background_position);
 		gameplayimage_view->update();
 	}
 
@@ -48,12 +50,13 @@ namespace Gameplay
 
 	void GameplayView::initilizeImage()
 	{
-		gameplayimage_view->initialize(getGameplayTexturePath(), game_window->getSize().x, game_window->getSize().y, background_position);
+		gameplayimage_view->initialize(getGameplayTexturePath(), game_window->getSize().x, game_window->getSize().y, sf::Vector2f(0,0));
 	}
 
 	void GameplayView::destroy()
 	{
 		delete(gameplayimage_view);
+
 	}
 	//void GameplayView::initializeBackgroundImage()
 	//{

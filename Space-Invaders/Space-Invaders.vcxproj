@@ -177,6 +177,7 @@
     <ClCompile Include="Source\UIService\MainMenuUIController\MainMenuUIController.cpp" />
     <ClCompile Include="Source\UIService\UIElement\ImageView.cpp" />
     <ClCompile Include="Source\UIService\UIElement\TextView.cpp" />
+    <ClCompile Include="Source\UIService\UIElement\UIView.cpp" />
     <ClCompile Include="Source\UIService\UIService.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -230,6 +231,7 @@
     <ClInclude Include="Header\UIService\UIElement\ButtonView.h" />
     <ClInclude Include="Header\UIService\UIElement\ImageView.h" />
     <ClInclude Include="Header\UIService\UIElement\TextView.h" />
+    <ClInclude Include="Header\UIService\UIElement\UIView.h" />
     <ClInclude Include="Header\UIService\UIService.h" />
     <ClInclude Include="Header\Enemy\Controllers\UFOController.h" />
     <ClInclude Include="Header\UIService\interface\IUIController.h" />

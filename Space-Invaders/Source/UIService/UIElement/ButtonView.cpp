@@ -38,7 +38,7 @@ namespace UI
 		}
 		void ButtonView::initialize(sf::String title, sf::String texture_path, float button_width, float button_height, sf::Vector2f position)
 		{
-			ImageView::initialize(texture_path, button_height, button_width, position);
+			ImageView::initialize(texture_path, button_width, button_height, position);
 			button_title = title;
 
 		}

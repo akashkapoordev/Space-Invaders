@@ -3,66 +3,38 @@
 #include "../../Header/UIService/MainMenuUIController/MainMenuUIController.h"
 #include "../../Header/UIService/interface/IUIController.h"
 
-#include <SFML/Graphics.hpp>
-
-namespace UI
-{
-	namespace UIElement
+	namespace UI
 	{
-		enum class UIState
-		{
-			VISIBLE,
-			HIDDEN,
-		};
+		
+			class UIService
+			{
+			public:
+				UIService();
+				~UIService();
 
-		class UIView
-		{
-		protected:
-			sf::RenderWindow* game_window;
-			UIState ui_state;
+				void initialize();
+				void update();
+				void render();
 
-		public:
-			UIView();
-			virtual ~UIView();
 
-			virtual void initialize();
-			virtual void update();
-			virtual void render();
+				void showScreen();
+				UI::Interface::IUIController* getCurrentUIController();
 
-			virtual void show();
-			virtual void hide();
-		};
+			private:
+				UI::MainMenu::MainMenuUIController* main_menu_controller;
+
+				void createControllers();
+				void initializeControllers();
+				void destroy();
+
+
+
+
+			};
+		
+
+
 	}
 
-
-	//class UIController;
-	using namespace Interface;
-	using namespace UIElement;
-	class UIService
-	{
-	public:
-		UIService();
-		~UIService();
-
-		void initialize();
-		void update();
-		void render();
-
-
-		void showScreen();
-		UI::Interface::IUIController* getCurrentUIController();
-
-	private:
-		UI::MainMenu::MainMenuUIController* main_menu_controller;
-
-		void createControllers();
-		void initializeControllers();
-		void destroy();
-
-
-
-
-	};
-}
 
 
