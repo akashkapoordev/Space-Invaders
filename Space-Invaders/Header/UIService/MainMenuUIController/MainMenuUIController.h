@@ -1,57 +1,53 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-
+#include "../../Header/UIService/interface/IUIController.h"
+#include "../../Header/UIService/UIElement/ImageView.h"
+#include "../../Header/UIService/UIElement/ButtonView.h"
 
 
 namespace UI
 {
 	namespace MainMenu
 	{
-		class MainMenuUIController
+		class MainMenuUIController : public Interface::IUIController
 		{
-		public:
-			MainMenuUIController();
-		
-			void initialize();
-			void update();
-			void render();
-
-			void initializeBackground();
-			void setBackgroundScale();
-
-			void initializeButton();
-			bool loadFromTexture();
-			void setButtonSprite();
-
-			void scaleAllButton();
-			void setButtonScale(sf::Sprite* button_to_scale);
-			void positionButton();
-
-
-			void processButtonInput();
-			bool buttonClick(sf::Sprite* button_sprite, sf::Vector2f mouse_position);
-
 		private:
-
+			// Constants:
 			const float button_width = 400.f;
 			const float button_height = 140.f;
-			const sf::String  background_texture_path;
-			const sf::String play_button_path;
-			const sf::String instruction_button_path;
-			const sf::String quit_button_path;
-			sf::RenderWindow* game_window;
-			sf::Texture background_texture;
-			sf::Texture play_button_texture;
-			sf::Texture instruction_button_texture;
-			sf::Texture quit_button_texture;
-			sf::Sprite background_sprite;
-			sf::Sprite play_button_sprite;
-			sf::Sprite instruction_button_sprite;
-			sf::Sprite quit_button_sprite;
 
-			sf::Vector2f button_position;
+			const float play_button_y_position = 500.f;
+			const float instructions_button_y_position = 700.f;
+			const float quit_button_y_position = 900.f;
+
+			const float background_alpha = 85.f;
+
+			UIElement::ImageView* background_image;
+
+			UIElement::ButtonView* play_button;
+			UIElement::ButtonView* instructions_button;
+			UIElement::ButtonView* quit_button;
+
+			void createImage();
+			void createButtons();
+			void initializeBackgroundImage();
+			void initializeButtons();
+			void registerButtonCallback();
+
+			void playButtonCallback();
+			void instructionsButtonCallback();
+			void quitButtonCallback();
+
+			void destroy();
+
+		public:
+			MainMenuUIController();
+			~MainMenuUIController();
+
+			void initialize() override;
+			void update() override;
+			void render() override;
+			void show() override;
 		};
 	}
-
 }
-

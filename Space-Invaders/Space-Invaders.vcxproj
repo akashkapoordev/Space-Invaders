@@ -132,6 +132,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\UIService\UIElement\ButtonView.cpp" />
     <ClCompile Include="Source\Power\Controller\TripleLaserController.cpp" />
     <ClCompile Include="Source\Power\Controller\ShieldController.cpp" />
     <ClCompile Include="Source\Power\Controller\RapidFireController.cpp" />
@@ -226,7 +227,7 @@
     <ClInclude Include="Header\Sound\SoundService.h" />
     <ClInclude Include="Header\Time\TimeService.h" />
     <ClInclude Include="Header\UIService\MainMenuUIController\MainMenuUIController.h" />
-    <ClInclude Include="Header\UIService\UIController.h" />
+    <ClInclude Include="Header\UIService\UIElement\ButtonView.h" />
     <ClInclude Include="Header\UIService\UIElement\ImageView.h" />
     <ClInclude Include="Header\UIService\UIElement\TextView.h" />
     <ClInclude Include="Header\UIService\UIService.h" />

@@ -3,18 +3,24 @@
 #include "../../Header/UIService/MainMenuUIController/MainMenuUIController.h"
 #include "../../Header/UIService/interface/IUIController.h"
 
+#include <SFML/Graphics.hpp>
 
 namespace UI
 {
 	namespace UIElement
 	{
-		enum class UIState {
-			HIDE,
-			VISIBLE
+		enum class UIState
+		{
+			VISIBLE,
+			HIDDEN,
 		};
-		
+
 		class UIView
 		{
+		protected:
+			sf::RenderWindow* game_window;
+			UIState ui_state;
+
 		public:
 			UIView();
 			virtual ~UIView();
@@ -25,14 +31,9 @@ namespace UI
 
 			virtual void show();
 			virtual void hide();
-
-		protected:
-			sf::RenderWindow* game_window;
-			UIState ui_state;
 		};
-
-
 	}
+
 
 	//class UIController;
 	using namespace Interface;
@@ -54,12 +55,12 @@ namespace UI
 	private:
 		UI::MainMenu::MainMenuUIController* main_menu_controller;
 
-		void createController();
-		void initializeController();
-		void destroyController();
+		void createControllers();
+		void initializeControllers();
+		void destroy();
 
 
-	
+
 
 	};
 }

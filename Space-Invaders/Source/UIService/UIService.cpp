@@ -2,139 +2,112 @@
 #include "../../Header//Main/GameService.h"
 #include "../../Header/Global/ServiceLocator.h"
 #include "../../Header/UIService/UIElement/TextView.h"
+#include "../../Header/Graphic/GraphicService.h"
 
 #include <iostream>
 using namespace std;
 
 namespace UI
 {
-	using namespace Interface;
-	using  namespace MainMenu;
 	using namespace Main;
-	using namespace UIElement;
+	using namespace MainMenu;
+	using namespace Interface;
+
 	UIService::UIService()
 	{
 		main_menu_controller = nullptr;
-		createController();
+
+		createControllers();
+	}
+
+	void UIService::createControllers()
+	{
+		main_menu_controller = new MainMenuUIController();
 	}
 
 	UIService::~UIService()
 	{
-		destroyController();
-		
+		destroy();
 	}
 
 	void UIService::initialize()
 	{
-		TextView::initializeTextView();
-		initializeController();
+		initializeControllers();
 	}
 
 	void UIService::update()
 	{
-		//switch (GameService::getGameState())
-		//{
-		//	case GameState::MAIN_MENU:
-		//		return main_menu_controller->update();
-		//		break;
-		//}
 		IUIController* ui_controller = getCurrentUIController();
-		if (ui_controller)
-		{
-			ui_controller->update();
-		}
+		if (ui_controller) ui_controller->update();
 	}
 
 	void UIService::render()
 	{
-		//switch (GameService::getGameState())
-		//{
-		//case GameState::MAIN_MENU:
-		//	//cout << "Current State";
-		//	return main_menu_controller->render();
-		//	break;
-		//}
 		IUIController* ui_controller = getCurrentUIController();
-		if (ui_controller)
-		{
-			ui_controller->render();
-		}
-
+		if (ui_controller) ui_controller->render();
 	}
 
 	void UIService::showScreen()
 	{
 		IUIController* ui_controller = getCurrentUIController();
-		ui_controller->show();
+		if (ui_controller) ui_controller->show();
 	}
 
-	
-
-	void UIService::createController()
+	void UIService::initializeControllers()
 	{
-		main_menu_controller = new MainMenuUIController();
-	}
-
-	void UIService::initializeController()
-	{
-		//cout << "initializing";
-		//IUIController* ui_controller = getCurrentUIController();
 		main_menu_controller->initialize();
 	}
 
-	void UIService::destroyController()
-	{
-		delete(main_menu_controller);
-	}
-
-	 IUIController* UIService::getCurrentUIController()
+	IUIController* UIService::getCurrentUIController()
 	{
 		switch (GameService::getGameState())
 		{
 		case GameState::MAIN_MENU:
 			return main_menu_controller;
+
 		default:
 			return nullptr;
-			break;
 		}
 	}
 
+	void UIService::destroy()
+	{
+		delete(main_menu_controller);
+	}
 }
+
+
+
 
 namespace UI
 {
 	namespace UIElement
 	{
 		using namespace Global;
+		using namespace Graphic;
 
-		UI::UIElement::UIView::UIView() = default;
+		UIView::UIView() = default;
 
-		UI::UIElement::UIView::~UIView() = default;
+		UIView::~UIView() = default;
 
-		void UI::UIElement::UIView::initialize()
+		void UIView::initialize()
 		{
 			game_window = ServiceLocator::getInstance()->getGraphicService()->getGameWindow();
 			ui_state = UIState::VISIBLE;
 		}
 
-		void UI::UIElement::UIView::update()
-		{
-		}
+		void UIView::update() { }
 
-		void UI::UIElement::UIView::render()
-		{
-		}
+		void UIView::render() { }
 
-		void UI::UIElement::UIView::show()
+		void UIView::show()
 		{
 			ui_state = UIState::VISIBLE;
 		}
 
-		void UI::UIElement::UIView::hide()
+		void UIView::hide()
 		{
-			ui_state = UIState::HIDE;
-
+			ui_state = UIState::HIDDEN;
 		}
-
 	}
 }
