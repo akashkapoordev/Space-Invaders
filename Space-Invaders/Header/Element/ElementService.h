@@ -14,7 +14,7 @@ namespace Element
 		void initialize();
 		void update();
 		void render();
-
+		void reset();
 	private:
 		const std::vector<Bunker::BunkerData>bunker_data_list = {
 			Bunker::BunkerData(sf::Vector2f(130.f, 800.f)),

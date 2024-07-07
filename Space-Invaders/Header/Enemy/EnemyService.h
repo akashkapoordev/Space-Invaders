@@ -19,7 +19,7 @@ namespace Enemy
 		
 	
 		void destroyEnemy(EnemyController* enemy_controller);
-
+		void reset();
 	private:
 		const float spawn_delay = 3.f;
 		float spawn_timer;

@@ -14,6 +14,8 @@ namespace Gameplay
 		void update();
 		void render();
 
+		void reset();
+
 	private:
 		GameplayController* gameplay_controller;
 	};

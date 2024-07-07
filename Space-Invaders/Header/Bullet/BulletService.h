@@ -22,6 +22,7 @@ namespace Bullet
 
 		BulletController* spawnBullet(sf::Vector2f psoition, MovementDirection direction, BulletType type, Entity::EntityType owner_type);
 		void destroyBullet(BulletController* controller);
+		void reset();
 
 	private:
 		std::vector<IProjectile*> bullet_list;

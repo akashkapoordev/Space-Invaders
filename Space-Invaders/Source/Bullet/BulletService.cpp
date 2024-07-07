@@ -48,6 +48,10 @@ namespace Bullet
 		delete(controller);
 	}
 
+	void BulletService::reset()
+	{
+	}
+
 	BulletController* BulletService::createBullet(BulletType type,Entity::EntityType owner_type)
 	{
 		switch (type)

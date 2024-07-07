@@ -17,6 +17,8 @@ namespace Player
 		void initialize(PlayerController* player_controller);
 		void update();
 		void render();
+		const sf::Sprite& getPlayerSprite();
+
 
 	private:
 
@@ -34,9 +36,7 @@ namespace Player
 		void initilizeImage();
 		sf::String getPlayerTexturePath();
 		void destroy();
-		const sf::Sprite& getPlayerSprite();
-		/*void initializePlayerSprite();
-		void scaleSprite();*/
+
 	};
 
 }

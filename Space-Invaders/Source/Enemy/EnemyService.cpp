@@ -77,6 +77,10 @@ namespace Enemy
 		delete(enemy_controller);
 	}
 
+	void EnemyService::reset()
+	{
+	}
+
 	void EnemyService::updateTimer()
 	{
 		spawn_timer = spawn_timer + ServiceLocator::getInstance()->getTimeService()->getDeltaTime();
