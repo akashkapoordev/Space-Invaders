@@ -3,7 +3,7 @@
 //#include "../../Header/Graphic/GraphicService.h"
 //#include "../Player/PlayerView.h"
 //#include "../Player/PlayerModel.h"
-
+#include "../../Header/Collision/ICollider.h"
 
 namespace Player
 {
@@ -12,7 +12,7 @@ namespace Player
 	class PlayerModel;
 	class PlayerView;
 
-	class PlayerController
+	class PlayerController:public Collision::ICollider
 	{
 	public:
 		PlayerController();
@@ -23,6 +23,16 @@ namespace Player
 		void render();
 
 		sf::Vector2f getPosition();
+
+		const sf::Sprite& getCollisionSprite() override;
+		void onCollision(ICollider* other_collider) override;
+
+		void reset();
+
+		void enableShield();
+		void enableRapidFire();
+		void enableTrippleLaser();
+
 	
 
 	private:
@@ -35,6 +45,24 @@ namespace Player
 		void moveRight();
 		void fireBullet();
 
+
+		bool bulletCollision(ICollider* other_collider);
+		bool enmeyCollision(ICollider* other_collider);
+		bool powerupCollision(ICollider* other_collider);
+
+		void updateFreezeDuration();
+		void freezPlayer();
+
+		void updateFireDuration();
+		void processBulletFire();
+		void fireBullet(bool b_tripple_laser = false);
+		void fireBullet(sf::Vector2f position);
+
+		void updatePowerDuration();
+
+		void disableShield();
+		void disableRapidFire();
+		void disableTrippleLaser();
 	};
 
 }

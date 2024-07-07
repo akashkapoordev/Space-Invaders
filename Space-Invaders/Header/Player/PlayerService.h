@@ -16,6 +16,13 @@ namespace Player
 		void update();
 		void render();
 
+		void enableShield();
+		void enableRapidFire();
+		void enableTrippleLaser();
+
+		void reset();
+
+
 		//void moveLeft();
 		//void moveRight();
 		//int getMoveSpeed();

@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "../../Header/UIService/UIElement/ImageView.h"
 
+
 namespace Player
 {
 	class PlayerController;
@@ -33,6 +34,7 @@ namespace Player
 		void initilizeImage();
 		sf::String getPlayerTexturePath();
 		void destroy();
+		const sf::Sprite& getPlayerSprite();
 		/*void initializePlayerSprite();
 		void scaleSprite();*/
 	};
