@@ -98,13 +98,13 @@ namespace Player
 		player_model->setPlayerPosition(current_position);
 	}
 
-	
+	/*
 		void PlayerController::fireBullet()
 		{
 			ServiceLocator::getInstance()->getBulletService()->spawnBullet(
 				player_model->getPlayerPosition() + player_model->barrel_position_offset,
-				Bullet::MovementDirection::UP, Bullet::BulletType::LASER,player_model->getEntityType());
-		}
+				Bullet::MovementDirection::UP, Bullet::BulletType::LASER,player_model->getEntityType);
+		}*/
 
 		bool PlayerController::bulletCollision(ICollider* other_collider)
 		{
