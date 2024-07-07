@@ -9,6 +9,7 @@
 namespace Bullet
 {
 	using namespace Global;
+	using namespace Entity;
 	void Bullet::BulletController::updateProjectilePosition()
 	{
 		switch (bullet_model->getMovementDirection())
@@ -52,9 +53,9 @@ namespace Bullet
 	
 	}
 
-	BulletController::BulletController(BulletType type)
+	BulletController::BulletController(BulletType type,Entity::EntityType owner_type)
 	{
-		bullet_model = new BulletModel(type);
+		bullet_model = new BulletModel(type,owner_type);
 		bullet_view = new BulletView();
 	}
 
@@ -92,6 +93,11 @@ namespace Bullet
 	BulletType BulletController::getBulletType()
 	{
 		return bullet_model->getBulletType();
+	}
+
+	Entity::EntityType BulletController::getOwnerEntityType()
+	{
+		return Entity::EntityType();
 	}
 
 }
