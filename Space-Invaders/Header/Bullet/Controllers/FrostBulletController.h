@@ -1,5 +1,6 @@
 #pragma once
 #include "../../Header/Bullet/BulletController.h"
+#include "../../Header/Entity/EntityConfig.h"
 
 
 namespace Bullet
@@ -9,7 +10,7 @@ namespace Bullet
 		class FrostBulletController:public BulletController
 		{
 		public:
-			FrostBulletController(BulletType type);
+			FrostBulletController(BulletType type,Entity::EntityType ownertype);
 			~FrostBulletController();
 
 		private:

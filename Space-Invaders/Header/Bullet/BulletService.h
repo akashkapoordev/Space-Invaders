@@ -5,6 +5,7 @@
 #include "../../Header/Entity/EntityConfig.h"
 
 
+
 namespace Bullet
 {
 	class BulletController;
@@ -26,7 +27,10 @@ namespace Bullet
 
 	private:
 		std::vector<IProjectile*> bullet_list;
+		std::vector<IProjectile*> flagged_bullets;
 		BulletController* createBullet(BulletType type,Entity::EntityType owner_type);
+		bool isBulletVaild(int index_i, std::vector<IProjectile*>& bullet_list);
+		void destroyFlaggedBullet();
 		void destroy();
 	};
 }

@@ -16,6 +16,8 @@ namespace Bullet
 		void initialize(BulletController* controller);
 		void update();
 		void render();
+		sf::Sprite& getSprite();
+
 
 	private:
 		const float bullet_height = 18.f;
@@ -33,6 +35,7 @@ namespace Bullet
 		void createUIElement();
 		void initilizeImage();
 		sf::String getBulletTexturePath();
+
 		void destroy();
 	};
 

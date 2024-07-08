@@ -1,5 +1,6 @@
 #pragma once
 #include "../../Header/Bullet/BulletController.h"
+#include "../../Header/Entity/EntityConfig.h"
 
 namespace Bullet
 {
@@ -8,7 +9,7 @@ namespace Bullet
 		class  LaserBulletController :public BulletController
 		{
 		public:
-			LaserBulletController(BulletType type);
+			LaserBulletController(BulletType type,Entity::EntityType ownertype);
 			~LaserBulletController();
 
 		private:

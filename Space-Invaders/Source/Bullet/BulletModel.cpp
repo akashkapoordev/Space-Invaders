@@ -4,9 +4,10 @@
 namespace Bullet
 {
 	using namespace Entity;
-	Bullet::BulletModel::BulletModel(BulletType type,Entity::EntityType owner_type)
+	Bullet::BulletModel::BulletModel(BulletType type,Entity::EntityType entity_type)
 	{
 		bullet_type = type;
+		owner_type = entity_type;
 	}
 
 	BulletModel::~BulletModel()
@@ -59,7 +60,7 @@ namespace Bullet
 
 	Entity::EntityType BulletModel::getOwnerEntityType()
 	{
-		return Entity::EntityType();
+		return owner_type;
 	}
 
 	MovementDirection BulletModel::getMovementDirection()

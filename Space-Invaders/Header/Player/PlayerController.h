@@ -43,7 +43,7 @@ namespace Player
 		void processInput();
 		void moveLeft();
 		void moveRight();
-		void fireBullet();
+		//void fireBullet();
 
 
 		bool bulletCollision(ICollider* other_collider);

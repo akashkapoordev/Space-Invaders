@@ -2,6 +2,7 @@
 #include "../../Header/Projectile/IProjectile.h"
 #include "../../Header/Bullet/BulletConfig.h"
 #include "../../Header/Entity/EntityConfig.h"
+#include "../../Header/Collision/ICollider.h"
 
 
 namespace Bullet
@@ -10,7 +11,7 @@ namespace Bullet
 	class BulletModel;
 	enum class BulletType;
 
-	class  BulletController : public IProjectile
+	class  BulletController : public IProjectile,public Collision::ICollider
 	{
 		
 	protected:
@@ -21,6 +22,11 @@ namespace Bullet
 		void moveUp();
 		void moveDown();
 		void handleOutOfBounds();
+		
+		void processBulletCollision(ICollider* other_collider);
+		void processEnemyCollision(ICollider* other_collider);
+		void processPlayerCollision(ICollider* other_collider);
+		void processBunkerCollision(ICollider* other_collider);
 
 	public:
 		BulletController(BulletType type,Entity::EntityType owner_type);
@@ -34,6 +40,9 @@ namespace Bullet
 		BulletType getBulletType();
 
 		Entity::EntityType getOwnerEntityType();
+		const sf::Sprite& getCollisionSprite() override;
+		void onCollision(ICollider* other_collider) override;
+
 	};
 
 }

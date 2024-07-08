@@ -1,5 +1,5 @@
 #pragma once
-
+#include <SFML/System.hpp>
 namespace Bullet
 {
 	enum class MovementDirection {
@@ -13,4 +13,16 @@ namespace Bullet
 		TORPEDO,
 		FROST
 	};
+
+	class BulletConfig
+	{
+	public:
+		static const sf::String laser_bullet_texture_path;
+		static const sf::String torpedoe_texture_path;
+		static const sf::String frost_beam_texture_path;
+
+		static sf::String getBulletPath(BulletType bullet);
+	};
+
+
 }

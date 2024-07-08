@@ -12,6 +12,7 @@
 #include "../../Header/Sound/SoundService.h"
 #include "../../Header/Bullet/BulletService.h"
 #include "../../Header/Power/PowerupService.h"
+#include "../../Header/Collision/CollisionService.h"
 
 
 namespace Global
@@ -53,6 +54,7 @@ namespace Global
 		Sound::SoundService* getSoundService();
 		Bullet::BulletService* getBulletService();
 		PowerUp::PowerupService* getPowerupService();
+		Collision::CollisionService* getCollisionService();
 
 	private:
 		Graphic::GraphicService* graphic_service;
@@ -66,6 +68,7 @@ namespace Global
 		Sound::SoundService* sound_service;
 		Bullet::BulletService* bullet_service;
 		PowerUp::PowerupService* powerup_service;
+		Collision::CollisionService* collision_service;
 		void createServices();
 		void clearAllServices();
 
