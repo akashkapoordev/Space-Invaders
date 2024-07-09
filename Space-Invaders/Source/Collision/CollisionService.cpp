@@ -28,7 +28,7 @@ namespace Collision
 	{
 		for (int i = 0;i < collider_list.size(); i++)
 		{
-			for (int j;j < collider_list.size();j++)
+			for (int j = 0;j < collider_list.size();j++)
 			{
 				doCollision(i, j);
 			}

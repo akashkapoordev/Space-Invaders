@@ -42,7 +42,7 @@ namespace Player {
 
 	void PlayerModel::setPlayerState(PlayerState state)
 	{
-		state = player_state;
+		player_state = state;
 	}
 	Entity::EntityType PlayerModel::getEntityType()
 	{

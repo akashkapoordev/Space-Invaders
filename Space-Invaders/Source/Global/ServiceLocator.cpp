@@ -8,6 +8,7 @@
 #include "../../Header/Element/ElementService.h"
 #include "../../Header/Sound/SoundService.h"
 #include "../../Header/Power/PowerupService.h"
+#include "../../Header/Collision/CollisionService.h"
 
 using namespace std;
 

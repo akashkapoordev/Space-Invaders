@@ -28,8 +28,9 @@ namespace Bullet
 		for (int i = 0;i < bullet_list.size();i++)
 		{
 			bullet_list[i]->update();
+			destroyFlaggedBullet();
 		}
-		destroyFlaggedBullet();
+	
 	}
 
 	void BulletService::render()
@@ -43,9 +44,12 @@ namespace Bullet
 	BulletController* BulletService::spawnBullet(sf::Vector2f position, MovementDirection direction, BulletType type, Entity::EntityType owner_type)
 	{
 		BulletController* bullet_controller = createBullet(type,owner_type);
+		//printf(owner_type);
+		
 		bullet_controller->initialize(position, direction);
 
 		ServiceLocator::getInstance()->getCollisionService()->addCollider(dynamic_cast<Collision::ICollider*>(bullet_controller));
+		//printf("Spwan Bullet");
 		bullet_list.push_back(bullet_controller);
 		return bullet_controller;
 	}
@@ -69,9 +73,12 @@ namespace Bullet
 		switch (type)
 		{
 		case Bullet::BulletType::LASER:
-			return new Controller::LaserBulletController(BulletType::FROST,owner_type);
+			printf("Laser Bullet");
+			return new Controller::LaserBulletController(BulletType::LASER,owner_type);
 			break;
 		case Bullet::BulletType::TORPEDO:
+			printf("TORPEDO Bullet");
+
 			return new Controller::TorpedoeController(BulletType::TORPEDO, owner_type);
 			break;
 		case Bullet::BulletType::FROST:
@@ -89,7 +96,7 @@ namespace Bullet
 	{
 		for (int i = 0;i <= flagged_bullets.size();i++)
 		{
-			if (isBulletVaild(i, flagged_bullets))continue;
+			if (!isBulletVaild(i, flagged_bullets))continue;
 			ServiceLocator::getInstance()->getCollisionService()->removeCollider(dynamic_cast<Collision::ICollider*>(flagged_bullets[i]));
 			delete(flagged_bullets[i]);
 		}
@@ -100,7 +107,7 @@ namespace Bullet
 	{
 		for (int i = 0;i < bullet_list.size();i++)
 		{
-			if (isBulletVaild(i, bullet_list))continue;
+			if (!isBulletVaild(i, bullet_list))continue;
 			ServiceLocator::getInstance()->getCollisionService()->removeCollider(dynamic_cast<Collision::ICollider*>(bullet_list[i]));
 			delete (bullet_list[i]);
 		}

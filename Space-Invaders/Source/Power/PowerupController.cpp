@@ -76,7 +76,7 @@ namespace PowerUp
 	const sf::Sprite& PowerupController::getCollisionSprite()
 	{
 		// TODO: insert return statement here
-		powerup_view->getPowerUpSprite();
+		return powerup_view->getPowerUpSprite();
 	}
 	void PowerupController::onCollision(ICollider* other_collider)
 	{

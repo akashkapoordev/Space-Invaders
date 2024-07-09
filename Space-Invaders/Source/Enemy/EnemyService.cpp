@@ -39,8 +39,9 @@ namespace Enemy
 		for (int i = 0;i < enemy_list.size();i++)
 		{
 			enemy_list[i]->update();
+			destroyFlaggedEnemies();
 		}
-		destroyFlaggedEnemies();
+		
 	}
 
 	void EnemyService::render()

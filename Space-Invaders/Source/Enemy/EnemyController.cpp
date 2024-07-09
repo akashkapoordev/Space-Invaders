@@ -157,7 +157,7 @@ namespace Enemy
 	const sf::Sprite& EnemyController::getCollisionSprite()
 	{
 		// TODO: insert return statement here
-		enemy_view->getEnenmySprite();
+		return enemy_view->getEnenmySprite();
 	}
 
 	void EnemyController::onCollision(ICollider* other_collider)

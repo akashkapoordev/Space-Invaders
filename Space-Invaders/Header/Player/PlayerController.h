@@ -1,9 +1,10 @@
 #pragma once
 
 //#include "../../Header/Graphic/GraphicService.h"
-//#include "../Player/PlayerView.h"
-//#include "../Player/PlayerModel.h"
+#include "../Player/PlayerView.h"
+#include "../Player/PlayerModel.h"
 #include "../../Header/Collision/ICollider.h"
+#include "../../Header/Power/PowerConfig.h"
 
 namespace Player
 {
@@ -29,6 +30,8 @@ namespace Player
 
 		void reset();
 
+		sf::Vector2f getPlayerPosition();
+		PlayerState getPlayerState();
 		void enableShield();
 		void enableRapidFire();
 		void enableTrippleLaser();
@@ -36,6 +39,12 @@ namespace Player
 	
 
 	private:
+		float elapsed_shield_duration;
+		float elapsed_rapid_fire_duration;
+		float elapsed_tripple_laser_duration;
+
+		float elapsed_fire_duration;
+		float elapsed_freez_duration;
 
 		PlayerModel* player_model;
 		PlayerView* player_view;

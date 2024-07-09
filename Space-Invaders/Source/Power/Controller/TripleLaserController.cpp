@@ -15,6 +15,7 @@ namespace PowerUp
 
 		void TripleLaserController::onCollected()
 		{
+			applyPowerUp();
 		}
 
 		void TripleLaserController::applyPowerUp()

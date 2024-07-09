@@ -16,7 +16,7 @@ namespace Enemy
 		void update();
 		void render();
 
-		sf::Sprite& getEnenmySprite();
+		const sf::Sprite& getEnenmySprite();
 	/*	void initializeSprite(EnemyType type);
 		void scaleSprite();*/
 

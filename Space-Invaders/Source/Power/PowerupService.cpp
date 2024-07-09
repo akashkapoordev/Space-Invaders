@@ -31,8 +31,9 @@ namespace PowerUp
 		for (int i = 0;i < collectible_list.size();i++)
 		{
 			collectible_list[i]->update();
+			destroyFlaggedList();
+
 		}
-		destroyFlaggedList();
 	}
 
 	void PowerupService::render()

@@ -37,7 +37,8 @@ namespace Gameplay
 			ServiceLocator::getInstance()->getEnemyService()->reset();
 			ServiceLocator::getInstance()->getBulletService()->reset();
 			ServiceLocator::getInstance()->getElementService()->reset();
+		}
+
 	}
 
 }
-

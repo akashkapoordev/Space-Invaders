@@ -29,7 +29,7 @@ namespace Player
 
 		PlayerState getPlayerState();
 		void setPlayerState(PlayerState state);
-		const sf::Vector2f barrel_position_offset = sf::Vector2f(20.f, 5.f);
+		//const sf::Vector2f barrel_position_offset = sf::Vector2f(20.f, 5.f);
 
 		//position offset of weapon
 		const sf::Vector2f left_most_position = sf::Vector2f(50.f, 950.f);
@@ -77,6 +77,7 @@ namespace Player
 
 		Entity::EntityType entity_type;
 		int playerScore;
+		//PlayerState player_state;
 
 		bool b_shield;
 		bool b_rapidfire;

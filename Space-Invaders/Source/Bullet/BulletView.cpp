@@ -66,10 +66,10 @@ namespace Bullet
 		}
 	}
 
-	sf::Sprite& BulletView::getSprite()
+	const sf::Sprite& BulletView::getSprite()
 	{
 		// TODO: insert return statement here
-		bulletimage_view->getSprite();
+		return bulletimage_view->getSprite();
 	}
 
 	void BulletView::destroy()

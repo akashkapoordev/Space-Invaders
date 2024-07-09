@@ -16,7 +16,7 @@ namespace Bullet
 		void initialize(BulletController* controller);
 		void update();
 		void render();
-		sf::Sprite& getSprite();
+		const sf::Sprite& getSprite();
 
 
 	private:

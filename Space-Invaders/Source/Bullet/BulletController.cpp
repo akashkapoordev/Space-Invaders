@@ -80,7 +80,7 @@ namespace Bullet
 		if (player_controller && getOwnerEntityType() != EntityType::PLAYER)
 		{
 			ServiceLocator::getInstance()->getBulletService()->destroyBullet(this);
-			}
+		}
 	}
 
 	void BulletController::processBunkerCollision(ICollider* other_collider)
@@ -142,7 +142,7 @@ namespace Bullet
 	const sf::Sprite& BulletController::getCollisionSprite()
 	{
 		// TODO: insert return statement here
-		bullet_view->getSprite();
+		return bullet_view->getSprite();
 	}
 
 	void BulletController::onCollision(ICollider* other_collider)

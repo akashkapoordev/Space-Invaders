@@ -28,6 +28,7 @@ namespace Global
 	class SoundService;
 	class BulletService;
 	class PowerupService;
+	class CollisionService;
 
 
 	class ServiceLocator

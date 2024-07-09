@@ -66,7 +66,7 @@ namespace Enemy
 		void UFOController::onCollision(ICollider* other_collider)
 		{
 			Enemy::EnemyController::onCollision(other_collider);
-			Bullet::BulletController* bullet_controller = dynamic_cast<Bullet::BulletController*>(bullet_controller);
+			Bullet::BulletController* bullet_controller = dynamic_cast<Bullet::BulletController*>(other_collider);
 			if (bullet_controller && bullet_controller->getOwnerEntityType() != Entity::EntityType::ENEMY)
 			{
 				ServiceLocator::getInstance()->getPowerupService()->spawnPowerUp(enemy_model->getEnemyPosition(), getRandomPower());

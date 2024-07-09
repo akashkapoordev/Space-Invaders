@@ -13,6 +13,7 @@ namespace PowerUp
 
 		void PowerUp::Controller::OutscalBombController::onCollected()
 		{
+			applyPowerUp();
 		}
 
 		void OutscalBombController::applyPowerUp()

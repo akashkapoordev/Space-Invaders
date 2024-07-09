@@ -41,10 +41,10 @@ namespace Enemy
 		enemyimage_view->render();
 		// game_window->draw(enemy_sprite);
 	}
-	sf::Sprite& EnemyView::getEnenmySprite()
+	const sf::Sprite& EnemyView::getEnenmySprite()
 	{
 		// TODO: insert return statement here
-		enemyimage_view->getSprite();
+		return enemyimage_view->getSprite();
 	}
 	/*void EnemyView::initializeSprite(EnemyType type)
 	{

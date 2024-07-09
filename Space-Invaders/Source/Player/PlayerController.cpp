@@ -76,6 +76,7 @@ namespace Player
 		if (eventService->pressedRightMouseButton())
 		{
 			//fireBullet();
+			processBulletFire();
 		}
 	}
 
@@ -174,7 +175,7 @@ namespace Player
 
 		void PlayerController::updateFireDuration()
 		{
-			if (player_model->elapsed_fire_duration > 0)
+			if (player_model->elapsed_fire_duration >= 0)
 			{
 				player_model->elapsed_fire_duration -= ServiceLocator::getInstance()->getTimeService()->getDeltaTime();
 			}
@@ -220,6 +221,7 @@ namespace Player
 
 		void PlayerController::fireBullet(sf::Vector2f position)
 		{
+			printf("Spwan Bullet");
 			ServiceLocator::getInstance()->getBulletService()->spawnBullet(position,Bullet::MovementDirection::UP,Bullet::BulletType::LASER,player_model->getEntityType());
 		}
 
@@ -260,7 +262,7 @@ namespace Player
 	const sf::Sprite& PlayerController::getCollisionSprite()
 	{
 		// TODO: insert return statement here
-		player_view->getPlayerSprite();
+		return player_view->getPlayerSprite();
 	}
 
 	void PlayerController::onCollision(ICollider* other_collider)
@@ -315,5 +317,13 @@ namespace Player
 	void PlayerController::reset()
 	{
 		player_model->reset();
+	}
+	sf::Vector2f PlayerController::getPlayerPosition()
+	{
+		return player_model->getPlayerPosition();
+	}
+	PlayerState PlayerController::getPlayerState()
+	{
+		return player_model->getPlayerState();
 	}
 }

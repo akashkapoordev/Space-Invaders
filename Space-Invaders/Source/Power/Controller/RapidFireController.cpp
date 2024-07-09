@@ -15,6 +15,7 @@ namespace PowerUp
 
 		void RapidFireController::onCollected()
 		{
+			applyPowerUp();
 		}
 
 		void RapidFireController::applyPowerUp()

@@ -45,7 +45,7 @@ namespace PowerUp
 	const sf::Sprite& PowerupView::getPowerUpSprite()
 	{
 		// TODO: insert return statement here
-		powerup_image->getSprite();
+		return powerup_image->getSprite();
 	}
 
 	/*void PowerupView::initialSprite(PowerType type)

@@ -13,6 +13,7 @@ namespace PowerUp
 		}
 		void ShieldController::onCollected()
 		{
+			applyPowerUp();
 		}
 		void ShieldController::applyPowerUp()
 		{
