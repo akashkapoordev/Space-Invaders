@@ -3,6 +3,7 @@
 #include "../../Header/Enemy/EnemyView.h"
 #include "../../Header/Global/ServiceLocator.h"
 #include "../../Header/Enemy/EnemyConfig.h"
+#include "../../Header/Bullet/BulletController.h"
 
 
 
@@ -47,6 +48,13 @@ namespace Enemy
 	{
 		return enemy_model->getEnemyPosition();
 	}
+
+	void EnemyController::destroy()
+	{
+		ServiceLocator::getInstance()->getEnemyService()->destroyEnemy(this);
+	}
+
+
 
 	//void EnemyController::move()
 	//{
@@ -146,6 +154,22 @@ namespace Enemy
 		}
 	
 	}
+	const sf::Sprite& EnemyController::getCollisionSprite()
+	{
+		// TODO: insert return statement here
+		enemy_view->getEnenmySprite();
+	}
+
+	void EnemyController::onCollision(ICollider* other_collider)
+	{
+		Bullet::BulletController* bullet_controller = dynamic_cast<Bullet::BulletController*>(other_collider);
+		if (bullet_controller && bullet_controller->getOwnerEntityType() != Entity::EntityType::ENEMY)
+		{
+			destroy();
+			return;
+		}
+	}
+
 	EnemyType EnemyController::getEnemyType()
 	{
 		return enemy_model->getEnemyType();
@@ -154,4 +178,6 @@ namespace Enemy
 	{
 		return enemy_model->getEnemyState();
 	}
+
+	
 }

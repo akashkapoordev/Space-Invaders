@@ -31,6 +31,10 @@ namespace Enemy
 
 		EnemyType getRandomEnemyType();
 		EnemyController* createEnemy(EnemyType type); 
+
+		//std::vector<EnemyController*> enemy_list;
+		std::vector<EnemyController*> flagged_enemy_list;
+		void destroyFlaggedEnemies();
 	};
 
 }

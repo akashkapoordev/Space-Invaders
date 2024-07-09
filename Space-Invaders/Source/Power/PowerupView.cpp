@@ -42,6 +42,12 @@ namespace PowerUp
 		powerup_image->render();
 	}
 
+	const sf::Sprite& PowerupView::getPowerUpSprite()
+	{
+		// TODO: insert return statement here
+		powerup_image->getSprite();
+	}
+
 	/*void PowerupView::initialSprite(PowerType type)
 	{
 		switch (type)

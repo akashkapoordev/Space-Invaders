@@ -2,10 +2,12 @@
 #include "../../Header/Power/PowerupModel.h"
 #include "../../Header/Power/PowerupView.h"
 #include "../../Header/Global/ServiceLocator.h"
+#include "../../Header/Player/PlayerController.h"
 
 namespace PowerUp
 {
 	using namespace Global;
+	using namespace Player;
 	PowerUp::PowerupController::PowerupController(PowerType type)
 	{
 		powerup_model = new PowerupModel(type);
@@ -68,6 +70,21 @@ namespace PowerUp
 			collectiblePosition.y < 0 || collectiblePosition.y > windowSize.y)
 		{
 			//ServiceLocator::getInstance()->getBulletService()->destroyBullet(this);
+			ServiceLocator::getInstance()->getPowerupService()->destroyPowerup(this);
+		}
+	}
+	const sf::Sprite& PowerupController::getCollisionSprite()
+	{
+		// TODO: insert return statement here
+		powerup_view->getPowerUpSprite();
+	}
+	void PowerupController::onCollision(ICollider* other_collider)
+	{
+		PlayerController* player_controller = dynamic_cast<PlayerController*>(other_collider);
+		if (player_controller)
+		{
+			onCollected();
+			ServiceLocator::getInstance()->getPowerupService()->destroyPowerup(this);
 		}
 	}
 }

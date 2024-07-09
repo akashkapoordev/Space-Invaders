@@ -132,6 +132,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Bullet\BulletConfig.cpp" />
+    <ClCompile Include="Source\Collision\CollisionService.cpp" />
+    <ClCompile Include="Source\Collision\ICollider.cpp" />
     <ClCompile Include="Source\UIService\UIElement\ButtonView.cpp" />
     <ClCompile Include="Source\Power\Controller\TripleLaserController.cpp" />
     <ClCompile Include="Source\Power\Controller\ShieldController.cpp" />
@@ -190,6 +193,8 @@
     <ClInclude Include="Header\Bullet\Controllers\LaserBulletController.h" />
     <ClInclude Include="Header\Bullet\Controllers\TorpedoeController.h" />
     <ClInclude Include="Header\Collectible\ICollectible.h" />
+    <ClInclude Include="Header\Collision\CollisionService.h" />
+    <ClInclude Include="Header\Collision\ICollider.h" />
     <ClInclude Include="Header\Element\Bunker\BunkerController.h" />
     <ClInclude Include="Header\Element\Bunker\BunkerModel.h" />
     <ClInclude Include="Header\Element\Bunker\BunkerView.h" />
@@ -202,6 +207,7 @@
     <ClInclude Include="Header\Enemy\EnemyService.h" />
     <ClInclude Include="Header\Enemy\EnemyView.h" />
     <ClInclude Include="Header\Element\ElementService.h" />
+    <ClInclude Include="Header\Entity\EntityConfig.h" />
     <ClInclude Include="Header\Event\EventService.h" />
     <ClInclude Include="Header\Gameplay\GameplayController .h" />
     <ClInclude Include="Header\Gameplay\GameplayService.h" />

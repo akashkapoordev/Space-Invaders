@@ -25,7 +25,8 @@ namespace Enemy
 			PowerUp::PowerType getRandomPower();
 
 			
-			
+			void onCollision(ICollider* other_collider) override;
+
 		};
 	}
 

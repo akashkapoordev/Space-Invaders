@@ -41,6 +41,11 @@ namespace Enemy
 		enemyimage_view->render();
 		// game_window->draw(enemy_sprite);
 	}
+	sf::Sprite& EnemyView::getEnenmySprite()
+	{
+		// TODO: insert return statement here
+		enemyimage_view->getSprite();
+	}
 	/*void EnemyView::initializeSprite(EnemyType type)
 	{
 		switch (type)
@@ -87,6 +92,7 @@ namespace Enemy
 	{
 		enemyimage_view->initialize(getEnemyTexturePath(), enemy_height, enemy_width, enemy_controller->getEnemyPosition());
 	}
+
 
 	sf::String EnemyView::getEnemyTexturePath()
 	{

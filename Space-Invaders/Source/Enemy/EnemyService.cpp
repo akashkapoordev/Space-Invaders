@@ -40,6 +40,7 @@ namespace Enemy
 		{
 			enemy_list[i]->update();
 		}
+		destroyFlaggedEnemies();
 	}
 
 	void EnemyService::render()
@@ -54,6 +55,7 @@ namespace Enemy
 	{
 		EnemyController* enemy_controller = createEnemy(getRandomEnemyType());
 		enemy_controller->initialize();
+		ServiceLocator::getInstance()->getCollisionService()->addCollider(dynamic_cast<Collision::ICollider*>(enemy_controller));
 		enemy_list.push_back(enemy_controller);
 		return enemy_controller;
 	}
@@ -73,12 +75,16 @@ namespace Enemy
 
 	void EnemyService::destroyEnemy(EnemyController* enemy_controller)
 	{
+		dynamic_cast<Collision::ICollider*>(enemy_controller)->disableCollision();
+		flagged_enemy_list.push_back(enemy_controller);
 		enemy_list.erase(std::remove(enemy_list.begin(), enemy_list.end(), enemy_controller), enemy_list.end());
-		delete(enemy_controller);
+		//delete(enemy_controller);
 	}
 
 	void EnemyService::reset()
 	{
+		Destroy();
+		spawn_timer = 0;
 	}
 
 	void EnemyService::updateTimer()
@@ -99,8 +105,10 @@ namespace Enemy
 	{
 		for (int i = 0;i < enemy_list.size();i++)
 		{
+			ServiceLocator::getInstance()->getCollisionService()->removeCollider(dynamic_cast<Collision::ICollider*>(enemy_list[i]));
 			delete(enemy_list[i]);
 		}
+		enemy_list.clear();
 		//delete(enemy_controller);
 	}
 	EnemyType EnemyService::getRandomEnemyType()
@@ -126,6 +134,15 @@ namespace Enemy
 		default:
 			break;
 		}
+	}
+	void EnemyService::destroyFlaggedEnemies()
+	{
+		for (int i = 0;i < flagged_enemy_list.size();i++)
+		{
+			ServiceLocator::getInstance()->getCollisionService()->removeCollider(dynamic_cast<Collision::ICollider*>(flagged_enemy_list[i]));
+			delete(flagged_enemy_list[i]);
+		}
+		flagged_enemy_list.clear();
 	}
 }
 

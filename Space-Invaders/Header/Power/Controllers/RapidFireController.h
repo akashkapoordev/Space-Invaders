@@ -12,6 +12,7 @@ namespace PowerUp
 			virtual ~RapidFireController();
 
 			void onCollected() override;
+			void applyPowerUp() override;
 
 
 		private:

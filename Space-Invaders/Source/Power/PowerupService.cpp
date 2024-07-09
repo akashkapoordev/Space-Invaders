@@ -32,6 +32,7 @@ namespace PowerUp
 		{
 			collectible_list[i]->update();
 		}
+		destroyFlaggedList();
 	}
 
 	void PowerupService::render()
@@ -46,6 +47,8 @@ namespace PowerUp
 	{
 		PowerupController* controller = createPowerUp(type);
 		controller->initialCollectible(position);
+
+		ServiceLocator::getInstance()->getCollisionService()->addCollider(dynamic_cast<Collision::ICollider*>(controller));
 		collectible_list.push_back(controller);
 
 		return controller;
@@ -70,6 +73,16 @@ namespace PowerUp
 		}
 	}
 
+	void PowerupService::destroyFlaggedList()
+	{
+		for (int i = 0;i < flagged_list.size();i++)
+		{
+			ServiceLocator::getInstance()->getCollisionService()->removeCollider(dynamic_cast<Collision::ICollider*>(flagged_list[i]));
+			delete(flagged_list[i]);
+		}
+		flagged_list.clear();
+	}
+
 
 	void PowerupService::destroyPowerup(PowerupController* powerup_controller)
 	{
@@ -81,8 +94,10 @@ namespace PowerUp
 	{
 		for (int i = 0;i < collectible_list.size();i++)
 		{
+			ServiceLocator::getInstance()->getCollisionService()->removeCollider(dynamic_cast<Collision::ICollider*>(collectible_list[i]));
 			delete(collectible_list[i]);
 		}
+		collectible_list.clear();
 	}
 
 }

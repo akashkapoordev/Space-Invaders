@@ -12,6 +12,7 @@ namespace PowerUp
 			virtual ~OutscalBombController();
 
 			void onCollected() override;
+			void applyPowerUp() override;
 
 		private:
 

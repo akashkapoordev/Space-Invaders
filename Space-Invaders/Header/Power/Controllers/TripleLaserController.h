@@ -12,6 +12,7 @@ namespace PowerUp
 			virtual ~TripleLaserController();
 
 			void onCollected() override;
+			void applyPowerUp() override;
 
 
 		private:

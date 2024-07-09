@@ -1,4 +1,5 @@
 #include "../../Header/Power/Controllers/OutscalBombController.h"
+#include "../../Header/Global/ServiceLocator.h"
 
 namespace PowerUp
 {
@@ -12,6 +13,11 @@ namespace PowerUp
 
 		void PowerUp::Controller::OutscalBombController::onCollected()
 		{
+		}
+
+		void OutscalBombController::applyPowerUp()
+		{
+			Global::ServiceLocator::getInstance()->getEnemyService()->reset();
 		}
 	
 	}

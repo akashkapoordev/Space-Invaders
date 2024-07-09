@@ -20,7 +20,7 @@ namespace PowerUp
 		//void initialSprite(PowerType type);
 		//void scaleSprite();
 
-
+		const sf::Sprite& getPowerUpSprite();
 
 	private:
 		PowerupController* power_controller;
