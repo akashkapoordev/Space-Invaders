@@ -61,7 +61,7 @@ namespace Bullet
 		BulletController* bullet_controller = dynamic_cast<BulletController*>(other_collider);
 		if (bullet_controller)
 		{
-			cout << "Destroying bullet" << '\n';
+			//cout << "Destroying bullet" << '\n';
 			ServiceLocator::getInstance()->getBulletService()->destroyBullet(this);
 		}
 	}
@@ -77,6 +77,8 @@ namespace Bullet
 
 	void BulletController::processPlayerCollision(ICollider* other_collider)
 	{
+		//cout << "Destroy Player" << "\n";
+
 		Player::PlayerController* player_controller = dynamic_cast<Player::PlayerController*>(other_collider);
 		if (player_controller && getOwnerEntityType() != EntityType::PLAYER)
 		{

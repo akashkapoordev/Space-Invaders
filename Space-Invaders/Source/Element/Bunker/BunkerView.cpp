@@ -39,6 +39,11 @@ namespace Element
 			bunkerimage_view->render();
 			// game_window->draw(bunker_sprite);
 		}
+		const sf::Sprite& BunkerView::getsprite()
+		{
+			// TODO: insert return statement here
+			return bunkerimage_view->getSprite();
+		}
 	/*	void BunkerView::initializeSprite()
 		{
 			if (bunker_texture.loadFromFile(Config::bunker_texture_path))

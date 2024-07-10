@@ -124,7 +124,7 @@ namespace Player
 				}
 				else
 				{
-					ServiceLocator::getInstance()->getGameplayService()->reset();
+					//ServiceLocator::getInstance()->getGameplayService()->reset();
 					decreasePlayerLives();
 					return true;
 				}
@@ -141,7 +141,7 @@ namespace Player
 			Enemy::EnemyController* enmey_controller = dynamic_cast<Enemy::EnemyController*>(other_collider);
 			if (enmey_controller)
 			{
-				cout << "Enemy Collided" << "\n";
+				//cout << "Enemy Collided" << "\n";
 				ServiceLocator::getInstance()->getGameplayService()->reset();
 				decreasePlayerLives();
 				return true;
@@ -225,7 +225,7 @@ namespace Player
 
 		void PlayerController::fireBullet(sf::Vector2f position)
 		{
-			std::cout << "Spwan Bullet" << '\n';
+			//std::cout << "Spwan Bullet" << '\n';
 			ServiceLocator::getInstance()->getBulletService()->spawnBullet(position,Bullet::MovementDirection::UP,Bullet::BulletType::LASER,player_model->getEntityType());
 		}
 
@@ -315,7 +315,10 @@ namespace Player
 	}
 	void PlayerController::decreasePlayerLives()
 	{
+		cout << "Player Lives before : " << PlayerModel::player_lives << "\n";
+
 		PlayerModel::player_lives -= 1;
+		cout << "Player Lives : " << PlayerModel::player_lives << "\n";
 		if (PlayerModel::player_lives <= 0)
 		{
 			reset();

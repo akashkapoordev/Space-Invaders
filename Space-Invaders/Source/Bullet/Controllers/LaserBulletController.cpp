@@ -14,7 +14,7 @@ namespace Bullet
 		}
 		void LaserBulletController::initialize(sf::Vector2f position, Bullet::MovementDirection direction)
 		{
-			printf("Initialize Bullet");
+			//printf("Initialize Bullet");
 			BulletController::initialize(position,direction);
 		}
 	}

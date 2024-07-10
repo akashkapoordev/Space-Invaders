@@ -2,12 +2,15 @@
 #include "../../Header/Global/ServiceLocator.h"
 #include "../../Header/Player/PlayerController.h"
 #include "../../Header/Event/EventService.h"
+#include "../../Header/Collision/ICollider.h"
 
 using namespace std;
 
 
 namespace Player
 {
+	using namespace Global;
+	using namespace Collision;
 	PlayerService::PlayerService()
 	{
 		player_controller = new PlayerController();
@@ -16,11 +19,16 @@ namespace Player
 	PlayerService::~PlayerService()
 	{
 		delete(player_controller);
+		ServiceLocator::getInstance()->getCollisionService()->removeCollider(dynamic_cast<ICollider*>(player_controller));
+		//Global::ServiceLocator::getInstance().getCollisionService().removeCollider(dynamic_cast<ICollider*>(player_controller));
+
 	}
 
 	void PlayerService::initialize()
 	{
 		player_controller->initialize();
+		ServiceLocator::getInstance()->getCollisionService()->addCollider(dynamic_cast<ICollider*>(player_controller));
+
 	}
 
 	void PlayerService::update()

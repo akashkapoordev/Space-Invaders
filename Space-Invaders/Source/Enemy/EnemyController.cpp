@@ -4,12 +4,14 @@
 #include "../../Header/Global/ServiceLocator.h"
 #include "../../Header/Enemy/EnemyConfig.h"
 #include "../../Header/Bullet/BulletController.h"
-
+#include "../../Header/Entity/EntityConfig.h"
+#include "../../Header/Player/PlayerController.h"
 
 
 namespace Enemy
 {
 	using namespace Global;
+	using namespace Player;
 	EnemyController::EnemyController(EnemyType type)
 	{
 		enemy_model = new EnemyModel(type);
@@ -169,6 +171,14 @@ namespace Enemy
 			destroy();
 			return;
 		}
+
+		PlayerController* player_controller = dynamic_cast<PlayerController*>(other_collider);
+			if (player_controller)
+			{
+				destroy();
+				return;
+			}
+
 	}
 
 	EnemyType EnemyController::getEnemyType()

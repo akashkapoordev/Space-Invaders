@@ -20,7 +20,8 @@ namespace Sound
 			sound_effect.setBuffer(sound_effect_buffer);
 			break;
 		default:
-			printf("Invalid Sound");
+			
+			("Invalid Sound");
 			break;
 		}
 

@@ -17,6 +17,7 @@ namespace Element
 			void initialize(BunkerController* controller);
 			void update();
 			void render();
+			const sf::Sprite& getsprite();
 
 
 		private:

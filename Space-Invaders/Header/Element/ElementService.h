@@ -15,6 +15,9 @@ namespace Element
 		void update();
 		void render();
 		void reset();
+		void destroyBunker(Bunker::BunkerController* bunker_controller);
+
+		
 	private:
 		const std::vector<Bunker::BunkerData>bunker_data_list = {
 			Bunker::BunkerData(sf::Vector2f(130.f, 800.f)),
@@ -26,7 +29,9 @@ namespace Element
 		};
 
 		std::vector<Bunker::BunkerController*> bunker_list;
-
+		std::vector<Bunker::BunkerController*> flagged_list;
+		void spwanBunker();
+		void destroyFlaggedBunker();
 		void destroy();
 	};
 

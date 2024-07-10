@@ -19,7 +19,7 @@ namespace UI
 		}
 		void GameplayUIController::initialize()
 		{
-			cout << "GameplayController Initilize" << "\n";
+			//cout << "GameplayController Initilize" << "\n";
 			initializeImage();
 			initializeText();
 		}
@@ -63,14 +63,14 @@ namespace UI
 		void GameplayUIController::initializeImage()
 		{
 			player_image->initialize(Config::player_texture_path, player_width, player_height, sf::Vector2f(0, 0));
-			cout << "player_image initilize" << "\n";
+			//cout << "player_image initilize" << "\n";
 		}
 		void GameplayUIController::initializeText()
 		{
 			enemy_killed_text->initializeTextView();
 			sf::String enemies_killed_string = "Enemy Killed : 0";
 			enemy_killed_text->initialize(enemies_killed_string, sf::Vector2f(enemies_killed_text_x_position, text_y_position), UI::UIElement::FontType::BUBBLE_BOBBLE, enemy_killed_font_size, text_color);
-			cout << "Initialize Text" << "\n";
+			//cout << "Initialize Text" << "\n";
 		}
 	}
 }
