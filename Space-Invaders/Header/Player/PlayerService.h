@@ -22,6 +22,7 @@ namespace Player
 
 		void reset();
 
+		void increaseEnemiesKilled(int val);
 
 		//void moveLeft();
 		//void moveRight();

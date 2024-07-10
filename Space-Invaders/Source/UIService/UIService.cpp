@@ -9,10 +9,12 @@ namespace UI
 	using namespace Main;
 	using namespace MainMenu;
 	using namespace Interface;
+	using namespace GamePlay;
 
 	UIService::UIService()
 	{
 		main_menu_controller = nullptr;
+		gameplay_controller = nullptr;
 
 		createControllers();
 	}
@@ -20,6 +22,7 @@ namespace UI
 	void UIService::createControllers()
 	{
 		main_menu_controller = new MainMenuUIController();
+		gameplay_controller = new GameplayUIController();
 	}
 
 	UIService::~UIService()
@@ -53,6 +56,7 @@ namespace UI
 	void UIService::initializeControllers()
 	{
 		main_menu_controller->initialize();
+		gameplay_controller->initialize();
 	}
 
 	IUIController* UIService::getCurrentUIController()
@@ -61,6 +65,8 @@ namespace UI
 		{
 		case GameState::MAIN_MENU:
 			return main_menu_controller;
+		case GameState::GAMEPLAY:
+			return gameplay_controller;
 
 		default:
 			return nullptr;
@@ -70,6 +76,7 @@ namespace UI
 	void UIService::destroy()
 	{
 		delete(main_menu_controller);
+		delete(gameplay_controller);
 	}
 }
 

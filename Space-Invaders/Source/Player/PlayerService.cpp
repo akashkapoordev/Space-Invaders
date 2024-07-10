@@ -53,4 +53,9 @@ namespace Player
 		player_controller->reset();
 	}
 
+	void PlayerService::increaseEnemiesKilled(int val)
+	{
+		player_controller->increaseEnemiesKilled(val);
+	}
+
 }

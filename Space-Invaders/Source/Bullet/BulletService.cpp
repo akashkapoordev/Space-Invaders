@@ -73,11 +73,11 @@ namespace Bullet
 		switch (type)
 		{
 		case Bullet::BulletType::LASER:
-			printf("Laser Bullet");
+			//printf("Laser Bullet");
 			return new Controller::LaserBulletController(BulletType::LASER,owner_type);
 			break;
 		case Bullet::BulletType::TORPEDO:
-			printf("TORPEDO Bullet");
+			//printf("TORPEDO Bullet");
 
 			return new Controller::TorpedoeController(BulletType::TORPEDO, owner_type);
 			break;
@@ -89,12 +89,12 @@ namespace Bullet
 
 	bool BulletService::isBulletVaild(int index_i, std::vector<IProjectile*>& bullet_list)
 	{
-		return index_i >= 0 && index_i<bullet_list.size()&&bullet_list[index_i]!= nullptr;
+		return index_i >= 0 && index_i<bullet_list.size() && bullet_list[index_i] != nullptr;
 	}
 
 	void BulletService::destroyFlaggedBullet()
 	{
-		for (int i = 0;i <= flagged_bullets.size();i++)
+		for (int i = 0;i < flagged_bullets.size();i++)
 		{
 			if (!isBulletVaild(i, flagged_bullets))continue;
 			ServiceLocator::getInstance()->getCollisionService()->removeCollider(dynamic_cast<Collision::ICollider*>(flagged_bullets[i]));

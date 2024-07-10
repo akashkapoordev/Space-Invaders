@@ -1,6 +1,9 @@
 #include "../../Header/Player/PlayerModel.h"
 
 namespace Player {
+	int PlayerModel::player_lives;
+	int PlayerModel::enemies_killed;
+
 	PlayerModel::PlayerModel()
 	{
 		entity_type = Entity::EntityType::PLAYER;
@@ -23,6 +26,7 @@ namespace Player {
 	void PlayerModel::initialize()
 	{
 		reset();
+
 	}
 
 	void PlayerModel::reset()
@@ -30,9 +34,12 @@ namespace Player {
 		player_state = PlayerState::ALIVE;
 		current_position = initial_position;
 		playerScore = 0;
+		player_lives = max_player_lives;
+		enemies_killed = 0;
 		b_shield = false;
 		b_rapidfire = false;
-		b_shield = false;
+		b_triplelaser = false;
+
 	}
 
 	PlayerState PlayerModel::getPlayerState()
@@ -80,5 +87,6 @@ namespace Player {
 	{
 		b_triplelaser = value;
 	}
+
 }
 

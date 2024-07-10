@@ -30,7 +30,6 @@ namespace Global
 		graphic_service = nullptr;
 		time_service = nullptr;
 		event_service = nullptr;
-		ui_service = nullptr;
 		gameplay_service = nullptr;
 		player_service = nullptr;
 		enemy_service = nullptr;
@@ -40,6 +39,7 @@ namespace Global
 		powerup_service = nullptr;
 		collision_service = nullptr;
 
+		ui_service = nullptr;
 		createServices();
 	}
 
@@ -59,7 +59,6 @@ namespace Global
 		graphic_service->initialize();
 		time_service->initialize();
 		event_service->initialize();
-		ui_service->initialize();
 		gameplay_service->initialize();
 		player_service->initialize();
 		enemy_service->initialize();
@@ -69,6 +68,7 @@ namespace Global
 		powerup_service->initialize();
 		collision_service->initilize();
 
+		ui_service->initialize();
 
 	}
 
@@ -77,7 +77,6 @@ namespace Global
 		graphic_service->update();
 		time_service->update();
 		event_service->update();
-		ui_service->update();
 		if (GameService::getGameState() == GameState::GAMEPLAY)
 		{
 			gameplay_service->update();
@@ -88,12 +87,13 @@ namespace Global
 			powerup_service->update();
 			collision_service->update();
 		}
+		ui_service->update();
+
 	}
 
 	void ServiceLocator::render()
 	{
 		graphic_service->render();
-		ui_service->render();
 		if (GameService::getGameState() == GameState::GAMEPLAY)
 		{
 			gameplay_service->render();
@@ -106,6 +106,8 @@ namespace Global
 
 
 		}
+		ui_service->render();
+
 		
 	}
 
@@ -175,7 +177,6 @@ namespace Global
 		graphic_service = new Graphic::GraphicService();
 		time_service = new Time::TimeService();
 		event_service = new Event::EventService();
-		ui_service = new UI::UIService();
 		player_service = new Player::PlayerService();
 		enemy_service = new Enemy::EnemyService();
 		gameplay_service = new Gameplay::GameplayService();
@@ -184,6 +185,8 @@ namespace Global
 		bullet_service = new Bullet::BulletService();
 		powerup_service = new PowerUp::PowerupService();
 		collision_service = new Collision::CollisionService();
+		ui_service = new UI::UIService();
+
 
 	}
 
@@ -192,7 +195,6 @@ namespace Global
 		delete(graphic_service);
 		delete(time_service);
 		delete(event_service);
-		delete(ui_service);
 		delete(player_service);
 		delete(enemy_service);
 		delete(gameplay_service);
@@ -201,6 +203,9 @@ namespace Global
 		delete(bullet_service);
 		delete(powerup_service);
 		delete(collision_service);
+
+		delete(ui_service);
+
 
 		
 

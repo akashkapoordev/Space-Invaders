@@ -61,6 +61,7 @@ namespace Bullet
 		BulletController* bullet_controller = dynamic_cast<BulletController*>(other_collider);
 		if (bullet_controller)
 		{
+			cout << "Destroying bullet" << '\n';
 			ServiceLocator::getInstance()->getBulletService()->destroyBullet(this);
 		}
 	}

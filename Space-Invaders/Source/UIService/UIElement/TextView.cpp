@@ -1,5 +1,6 @@
 #include "../../Header/UIService/UIElement/TextView.h"
 #include "../../Header/Global/Config.h"
+#include <iostream>
 
 namespace UI
 {
@@ -37,6 +38,7 @@ namespace UI
 			UIView::render();
 			if (ui_state == UIState::VISIBLE)
 			{
+				//std::cout << "Draw Text" << "\n";
 				game_window->draw(font_text);
 			}
 		}

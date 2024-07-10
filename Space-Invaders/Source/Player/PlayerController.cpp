@@ -13,6 +13,7 @@ namespace Player
 {
 	using namespace Global;
 	using namespace Bullet;
+
 	PlayerController::PlayerController()
 	{
 		player_model = new PlayerModel();
@@ -124,6 +125,7 @@ namespace Player
 				else
 				{
 					ServiceLocator::getInstance()->getGameplayService()->reset();
+					decreasePlayerLives();
 					return true;
 				}
 			return false;
@@ -139,7 +141,9 @@ namespace Player
 			Enemy::EnemyController* enmey_controller = dynamic_cast<Enemy::EnemyController*>(other_collider);
 			if (enmey_controller)
 			{
+				cout << "Enemy Collided" << "\n";
 				ServiceLocator::getInstance()->getGameplayService()->reset();
+				decreasePlayerLives();
 				return true;
 			}
 			return false;
@@ -221,7 +225,7 @@ namespace Player
 
 		void PlayerController::fireBullet(sf::Vector2f position)
 		{
-			printf("Spwan Bullet");
+			std::cout << "Spwan Bullet" << '\n';
 			ServiceLocator::getInstance()->getBulletService()->spawnBullet(position,Bullet::MovementDirection::UP,Bullet::BulletType::LASER,player_model->getEntityType());
 		}
 
@@ -309,6 +313,14 @@ namespace Player
 		player_model->elapsed_tripple_laser_duration = player_model->tripple_laser_powerup_duration;
 		player_model->setTrippleFireState(true);
 	}
+	void PlayerController::decreasePlayerLives()
+	{
+		PlayerModel::player_lives -= 1;
+		if (PlayerModel::player_lives <= 0)
+		{
+			reset();
+		}
+	}
 	void PlayerController::disableTrippleLaser()
 	{
 		player_model->setTrippleFireState(false);
@@ -326,4 +338,5 @@ namespace Player
 	{
 		return player_model->getPlayerState();
 	}
+	
 }

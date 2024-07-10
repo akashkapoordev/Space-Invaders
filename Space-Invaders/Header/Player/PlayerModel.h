@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "../../Header/Entity/EntityConfig.h"
+#include "../../Header/UIService/Controller/GameplayUIController.h"
 
 namespace Player
 {
@@ -70,7 +71,11 @@ namespace Player
 		void setRapidFireState(bool value);
 		void setTrippleFireState(bool value);
 
+
+
 	private:
+		friend class PlayerController;
+
 		const sf::Vector2f initial_position = sf::Vector2f(950.f, 950.f);
 		sf::Vector2f current_position;
 
@@ -82,6 +87,13 @@ namespace Player
 		bool b_shield;
 		bool b_rapidfire;
 		bool b_triplelaser;
+
+		friend void UI::GamePlay::GameplayUIController::updateEnemyKilledUI();
+		friend void UI::GamePlay::GameplayUIController::drawPlayerLives();
+
+		const int max_player_lives = 3;
+		static int player_lives;
+		static int enemies_killed;
 
 	};
 

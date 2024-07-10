@@ -36,7 +36,8 @@ namespace Player
 		void enableRapidFire();
 		void enableTrippleLaser();
 
-	
+		void decreasePlayerLives();
+		inline void  increaseEnemiesKilled(int val) { PlayerModel::enemies_killed += val; }
 
 	private:
 		float elapsed_shield_duration;
