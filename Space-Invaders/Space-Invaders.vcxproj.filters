@@ -45,9 +45,6 @@
     <ClCompile Include="Source\Player\PlayerController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\UIService\MainMenuUIController\MainMenuUIController.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source\UIService\UIService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -165,6 +162,15 @@
     <ClCompile Include="Source\Collision\ICollider.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\UIService\Controller\GameplayUIController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\UIService\Controller\MainMenuUIController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\UIService\Controller\SplashScreenUIController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\Header.h">
@@ -195,9 +201,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Header\Player\PlayerView.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\UIService\MainMenuUIController\MainMenuUIController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Header\UIService\UIService.h">
@@ -336,6 +339,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Header\Entity\EntityConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\UIService\Controller\GameplayUIController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\UIService\Controller\MainMenuUIController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\UIService\Controller\SplashScreenUIController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

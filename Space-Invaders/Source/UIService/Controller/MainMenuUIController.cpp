@@ -1,4 +1,4 @@
-#include "../../Header/UIService/MainMenuUIController/MainMenuUIController.h"
+#include "../../Header/UIService/Controller/MainMenuUIController.h"
 #include "../../Header/Global/ServiceLocator.h"
 #include "../../Header/Graphic/GraphicService.h"
 #include "../../Header/Main/GameService.h";

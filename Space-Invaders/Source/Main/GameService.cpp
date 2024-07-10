@@ -20,7 +20,7 @@ namespace Main
 	{
 		service_locator->initialize();
 		initializeVariables();
-		showMainMenu();
+		showSplashScreen();
 	}
 
 	void GameService::initializeVariables()
@@ -63,10 +63,16 @@ namespace Main
 		currentState = state;
 	}
 
-	void GameService::showMainMenu()
+	void GameService::showSplashScreen()
 	{
-		setGameState(GameState::MAIN_MENU);
+		setGameState(GameState::SPLASH_SCREEN);
+		ServiceLocator::getInstance()->uiService()->showScreen();
 	}
+
+	//void GameService::showMainMenu()
+	//{
+	//	setGameState(GameState::MAIN_MENU);
+	//}
 
 
 

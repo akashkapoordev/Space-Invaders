@@ -8,6 +8,7 @@ namespace Main
 	enum class GameState
 	{
 		BOOT,
+		SPLASH_SCREEN,
 		MAIN_MENU,
 		GAMEPLAY
 	};
@@ -29,7 +30,7 @@ namespace Main
 		static GameState getGameState();
 		static void setGameState(GameState state);
 
-		void showMainMenu();
+		void showSplashScreen();
 
 	private:
 		Global::ServiceLocator* service_locator;

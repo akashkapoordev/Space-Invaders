@@ -136,6 +136,7 @@
     <ClCompile Include="Source\Collision\CollisionService.cpp" />
     <ClCompile Include="Source\Collision\ICollider.cpp" />
     <ClCompile Include="Source\UIService\Controller\GameplayUIController.cpp" />
+    <ClCompile Include="Source\UIService\Controller\SplashScreenUIController.cpp" />
     <ClCompile Include="Source\UIService\UIElement\ButtonView.cpp" />
     <ClCompile Include="Source\Power\Controller\TripleLaserController.cpp" />
     <ClCompile Include="Source\Power\Controller\ShieldController.cpp" />
@@ -236,6 +237,7 @@
     <ClInclude Include="Header\Time\TimeService.h" />
     <ClInclude Include="Header\UIService\Controller\GameplayUIController.h" />
     <ClInclude Include="Header\UIService\Controller\MainMenuUIController.h" />
+    <ClInclude Include="Header\UIService\Controller\SplashScreenUIController.h" />
     <ClInclude Include="Header\UIService\UIElement\ButtonView.h" />
     <ClInclude Include="Header\UIService\UIElement\ImageView.h" />
     <ClInclude Include="Header\UIService\UIElement\TextView.h" />
