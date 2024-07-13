@@ -31,6 +31,11 @@ namespace UI
             }
         }
 
+        void ImageView::setTextureRect(sf::IntRect texture_rect)
+        {
+            image_sprite.setTextureRect(texture_rect);
+        }
+
         void ImageView::setTexture(sf::String texture_path)
         {
             if (image_texture.loadFromFile(texture_path))
@@ -43,6 +48,14 @@ namespace UI
         {
             float scale_x = width / image_sprite.getTexture()->getSize().x;
             float scale_y = height / image_sprite.getTexture()->getSize().y;
+
+            image_sprite.setScale(scale_x, scale_y);
+        }
+
+        void ImageView::setScale(float width, float height, float tile_width, float tile_height)
+        {
+            float scale_x = width / tile_width;
+            float scale_y = height / tile_height;
 
             image_sprite.setScale(scale_x, scale_y);
         }
