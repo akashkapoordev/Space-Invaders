@@ -13,6 +13,7 @@
 #include "../../Header/Bullet/BulletService.h"
 #include "../../Header/Power/PowerupService.h"
 #include "../../Header/Collision/CollisionService.h"
+#include "../../Header/AnimationSystem/AnimationService.h"
 
 
 namespace Global
@@ -29,6 +30,7 @@ namespace Global
 	class BulletService;
 	class PowerupService;
 	class CollisionService;
+	class AnimationService;
 
 
 	class ServiceLocator
@@ -56,6 +58,7 @@ namespace Global
 		Bullet::BulletService* getBulletService();
 		PowerUp::PowerupService* getPowerupService();
 		Collision::CollisionService* getCollisionService();
+		Animation::AnimationService* getAnimationService();
 
 	private:
 		Graphic::GraphicService* graphic_service;
@@ -70,6 +73,7 @@ namespace Global
 		Bullet::BulletService* bullet_service;
 		PowerUp::PowerupService* powerup_service;
 		Collision::CollisionService* collision_service;
+		Animation::AnimationService* animation_service;
 		void createServices();
 		void clearAllServices();
 

@@ -9,6 +9,7 @@
 #include "../../Header/Sound/SoundService.h"
 #include "../../Header/Power/PowerupService.h"
 #include "../../Header/Collision/CollisionService.h"
+#include "../../Header/AnimationSystem/AnimationService.h"
 
 using namespace std;
 
@@ -38,6 +39,7 @@ namespace Global
 		bullet_service = nullptr;
 		powerup_service = nullptr;
 		collision_service = nullptr;
+		animation_service = nullptr;
 
 		ui_service = nullptr;
 		createServices();
@@ -67,6 +69,7 @@ namespace Global
 		bullet_service->initialize();
 		powerup_service->initialize();
 		collision_service->initilize();
+		animation_service->initialize();
 
 		ui_service->initialize();
 
@@ -86,6 +89,7 @@ namespace Global
 			bullet_service->update();
 			powerup_service->update();
 			collision_service->update();
+			animation_service->update();
 		}
 		ui_service->update();
 
@@ -102,6 +106,7 @@ namespace Global
 			element_service->render();
 			bullet_service->render();
 			powerup_service->render();
+			animation_service->render();
 
 
 
@@ -166,6 +171,11 @@ namespace Global
 		return collision_service;
 	}
 
+	Animation::AnimationService* ServiceLocator::getAnimationService()
+	{
+		return animation_service;
+	}
+
 	UI::UIService* ServiceLocator::uiService()
 	{
 		return ui_service;
@@ -185,6 +195,7 @@ namespace Global
 		bullet_service = new Bullet::BulletService();
 		powerup_service = new PowerUp::PowerupService();
 		collision_service = new Collision::CollisionService();
+		animation_service = new Animation::AnimationService();
 		ui_service = new UI::UIService();
 
 
@@ -203,6 +214,7 @@ namespace Global
 		delete(bullet_service);
 		delete(powerup_service);
 		delete(collision_service);
+		delete(animation_service);
 
 		delete(ui_service);
 
