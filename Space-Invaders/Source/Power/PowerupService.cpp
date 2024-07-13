@@ -87,8 +87,10 @@ namespace PowerUp
 
 	void PowerupService::destroyPowerup(PowerupController* powerup_controller)
 	{
+		ServiceLocator::getInstance()->getCollisionService()->removeCollider(dynamic_cast<Collision::ICollider*>(powerup_controller));
+
+		flagged_list.push_back(powerup_controller);
 		collectible_list.erase(std::remove(collectible_list.begin(), collectible_list.end(), powerup_controller), collectible_list.end());
-		delete(powerup_controller);
 	}
 
 	void PowerupService::destroy()
