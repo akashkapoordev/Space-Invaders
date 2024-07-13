@@ -171,6 +171,9 @@
     <ClCompile Include="Source\UIService\Controller\SplashScreenUIController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\UIService\UIElement\AnimatedImageView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\Header.h">
@@ -348,6 +351,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Header\UIService\Controller\SplashScreenUIController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\UIService\UIElement\AnimatedImageView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

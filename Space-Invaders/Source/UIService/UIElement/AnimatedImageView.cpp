@@ -62,7 +62,7 @@ namespace UI
 		}
 		void AnimatedImageView::update()
 		{
-			if (UIView::ui_state == UIState::VISIBLE)
+			if (ui_state == UIState::VISIBLE)
 			{
 				updateElapsedDuration();
 				handleAnimationProgress();
