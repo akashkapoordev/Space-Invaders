@@ -6,6 +6,8 @@
 #include "../../Header/Bullet/BulletController.h"
 #include "../../Header/Entity/EntityConfig.h"
 #include "../../Header/Player/PlayerController.h"
+#include "../../Header/AnimationSystem/AnimationSystem.h"
+
 
 
 namespace Enemy
@@ -53,6 +55,8 @@ namespace Enemy
 
 	void EnemyController::destroy()
 	{
+		ServiceLocator::getInstance()->getAnimationService()->spwanAnimation(enemy_model->getEnemyPosition(),Animation::AnimationType::EXPLOSION);
+		//ServiceLocator::getInstance()->getSoundService()->playSound(Sound::SoundType);
 		ServiceLocator::getInstance()->getPlayerService()->increaseEnemiesKilled(1);
 		ServiceLocator::getInstance()->getEnemyService()->destroyEnemy(this);
 	}

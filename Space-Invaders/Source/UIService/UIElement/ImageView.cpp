@@ -52,6 +52,14 @@ namespace UI
             image_sprite.setScale(scale_x, scale_y);
         }
 
+  /*      void ImageView::setScaleTile(float width, float height, float tile_width, float tile_height)
+        {
+            float scale_x = width / tile_width;
+            float scale_y = height / tile_height;
+
+            image_sprite.setScale(scale_x, scale_y);
+        }*/
+
         void ImageView::setScale(float width, float height, float tile_width, float tile_height)
         {
             float scale_x = width / tile_width;
