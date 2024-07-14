@@ -55,4 +55,11 @@ namespace Global
 	const sf::String Config::button_click_sound_path = "assets/sounds/button_click_sound.wav";
 
 	const sf::String Config::explosion_texture_path = "assets/textures/explosion.png";
+
+	const sf::String Config::explosion_sound = "assets/sounds/explosion.wav";
+	const sf::String Config::powerup_disable_sound = "assets/sounds/powerup_disabled.ogg";
+	const sf::String Config::powerup_enable_sound = "assets/sounds/powerup_enabled.ogg";
+	const sf::String Config::bullet_fire_sound = "assets/sounds/bullet_fire.ogg";
+
+
 }

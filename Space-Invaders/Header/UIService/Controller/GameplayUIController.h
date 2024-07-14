@@ -40,6 +40,7 @@ namespace UI
 
 			UI::UIElement::ImageView* player_image;
 			UI::UIElement::TextView* enemy_killed_text;
+			//UI::UIElement::TextView* player_score_text;
 			void createUI();
 			void initializeImage();
 			void initializeText();

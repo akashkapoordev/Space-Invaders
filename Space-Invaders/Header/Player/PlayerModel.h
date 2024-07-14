@@ -48,7 +48,7 @@ namespace Player
 
 		//cooldown DDuration
 		const float fire_cooldown_duration = 0.2f;
-		const float rapid_fire_cooldown_duration = 0.05f;
+		const float rapid_fire_cooldown_duration = 0.03f;
 		const float tripple_laser_position_offset = 30.f;
 
 		//elasped duration
@@ -81,7 +81,7 @@ namespace Player
 
 
 		Entity::EntityType entity_type;
-		int playerScore;
+		static int playerScore;
 		//PlayerState player_state;
 
 		bool b_shield;

@@ -3,6 +3,7 @@
 #include "../../Header/Power/PowerupView.h"
 #include "../../Header/Global/ServiceLocator.h"
 #include "../../Header/Player/PlayerController.h"
+#include "../../Header/Sound/SoundService.h"
 
 namespace PowerUp
 {

@@ -14,13 +14,14 @@ namespace Enemy
 			virtual ~UFOController();
 
 			void initialize() override;
+			void moveLeft();
+			void moveRight();
+			void fireBullet() override;
 
 		private:
 			float speed = 20.f;
 			void move() override;
-			void moveLeft();
-			void moveRight();
-			void fireBullet() override;
+		
 
 			PowerUp::PowerType getRandomPower();
 

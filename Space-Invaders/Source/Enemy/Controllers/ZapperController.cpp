@@ -43,6 +43,7 @@ namespace Enemy
 				break;
 			case MovementDirection::DOWN:
 				moveDown();
+				break;
 			}
 		}
 

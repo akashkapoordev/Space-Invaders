@@ -106,6 +106,8 @@ namespace Enemy
 			break;
 		case Enemy::EnemyType::UFO:
 			return Config::ufo_texture_path;
+		case EnemyType::THUNDER_SNAKE:
+			return Config::thunder_snake_texture_path;
 			break;
 		}
 	}

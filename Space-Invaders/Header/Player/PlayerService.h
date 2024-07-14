@@ -23,6 +23,7 @@ namespace Player
 		void reset();
 
 		void increaseEnemiesKilled(int val);
+		void increasePlayerScore(int score);
 
 		//void moveLeft();
 		//void moveRight();

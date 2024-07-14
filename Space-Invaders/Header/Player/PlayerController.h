@@ -38,6 +38,7 @@ namespace Player
 
 		void decreasePlayerLives();
 		inline void  increaseEnemiesKilled(int val) { PlayerModel::enemies_killed += val; }
+		void  increaswPlayerScore(int score) { PlayerModel::playerScore += score; }
 
 	private:
 		float elapsed_shield_duration;

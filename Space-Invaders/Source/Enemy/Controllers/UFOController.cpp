@@ -21,6 +21,7 @@ namespace Enemy
 		void Enemy::Controller::UFOController::initialize()
 		{
 			EnemyController::initialize();
+			enemy_model->setMovementDirection(MovementDirection::LEFT);
 		}
 
 		void Enemy::Controller::UFOController::move()
@@ -29,8 +30,10 @@ namespace Enemy
 			{
 			case MovementDirection::LEFT:
 				moveLeft();
+				break;
 			case MovementDirection::RIGHT:
 				moveRight();
+				break;
 			}
 		}
 
@@ -38,7 +41,15 @@ namespace Enemy
 		{
 			sf::Vector2f currentPosition = enemy_model->getEnemyPosition();
 			currentPosition.x -= enemy_model->move_speed * ServiceLocator::getInstance()->getTimeService()->getDeltaTime();
-			enemy_model->setEnemyPosition(currentPosition);
+			if (currentPosition.x <= enemy_model->left_window.x)
+			{
+				enemy_model->setMovementDirection(MovementDirection::RIGHT);
+			}
+			else
+			{
+				enemy_model->setEnemyPosition(currentPosition);
+
+			}
 			
 		}
 
@@ -46,7 +57,16 @@ namespace Enemy
 		{
 			sf::Vector2f currentPosition = enemy_model->getEnemyPosition();
 			currentPosition.x += enemy_model->move_speed * ServiceLocator::getInstance()->getTimeService()->getDeltaTime();
-			enemy_model->setEnemyPosition(currentPosition);
+			if (currentPosition.x >= enemy_model->right_window.x)
+			{
+				enemy_model->setMovementDirection(MovementDirection::LEFT);
+				printf("Move Left");
+			}
+			else
+			{
+				enemy_model->setEnemyPosition(currentPosition);
+
+			}
 		}
 
 		void Enemy::Controller::UFOController::fireBullet()

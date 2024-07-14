@@ -61,6 +61,18 @@ namespace Enemy
 		enemy_state = state;
 	}
 
+	/*MovementDirection EnemyModel::getRandomEnemyType()
+	{
+		int random_direction = std::rand() % 3;
+		return static_cast<MovementDirection>(random_direction);
+	}*/
+
+	//EnemyType EnemyService::getRandomEnemyType()
+	//{
+	//	int random_enemy = std::rand() % 4;
+	//	return static_cast<Enemy::EnemyType>(random_enemy);
+	//}
+
 
 
 	sf::Vector2f Enemy::EnemyModel::getEnemyPosition()

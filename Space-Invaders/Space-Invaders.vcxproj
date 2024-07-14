@@ -134,6 +134,8 @@
   <ItemGroup>
     <ClCompile Include="Source\AnimationSystem\AnimationService.cpp" />
     <ClCompile Include="Source\AnimationSystem\AnimationSystem.cpp" />
+    <ClCompile Include="Source\Enemy\Controllers\ThunderSnakeController.cpp" />
+    <ClCompile Include="Source\UIService\Controller\InstructionUIController.cpp" />
     <ClCompile Include="Source\UIService\UIElement\AnimatedImageView.cpp" />
     <ClCompile Include="Source\Bullet\BulletConfig.cpp" />
     <ClCompile Include="Source\Collision\CollisionService.cpp" />
@@ -243,6 +245,7 @@
     <ClInclude Include="Header\Sound\SoundService.h" />
     <ClInclude Include="Header\Time\TimeService.h" />
     <ClInclude Include="Header\UIService\Controller\GameplayUIController.h" />
+    <ClInclude Include="Header\UIService\Controller\InstructionUIController.h" />
     <ClInclude Include="Header\UIService\Controller\MainMenuUIController.h" />
     <ClInclude Include="Header\UIService\Controller\SplashScreenUIController.h" />
     <ClInclude Include="Header\UIService\UIElement\AnimatedImageView.h" />

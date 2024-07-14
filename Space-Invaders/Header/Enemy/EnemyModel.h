@@ -36,7 +36,7 @@ namespace Enemy
 		void setEnemyState(EnemyState state);
 
 		const sf::Vector2f barrel_position_offset = sf::Vector2f(20.f, 50.f); 
-
+		MovementDirection getRandomEnemyType();
 
 
 	private:

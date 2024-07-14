@@ -33,7 +33,7 @@ namespace Enemy
 	protected:
 		EnemyModel* enemy_model;
 		EnemyView* enemy_view;
-
+		EnemyType type;
 		sf::Vector2f getRandomInitialPosition();
 		void handleOutOfBounds();
 

@@ -56,7 +56,7 @@ namespace Enemy
 	void EnemyController::destroy()
 	{
 		ServiceLocator::getInstance()->getAnimationService()->spwanAnimation(enemy_model->getEnemyPosition(),Animation::AnimationType::EXPLOSION);
-		//ServiceLocator::getInstance()->getSoundService()->playSound(Sound::SoundType);
+		ServiceLocator::getInstance()->getSoundService()->playSound(Sound::SoundType::EXPLOSION);
 		ServiceLocator::getInstance()->getPlayerService()->increaseEnemiesKilled(1);
 		ServiceLocator::getInstance()->getEnemyService()->destroyEnemy(this);
 	}

@@ -9,6 +9,7 @@ namespace Main
 	{
 		BOOT,
 		SPLASH_SCREEN,
+		INSTRUCTION,
 		MAIN_MENU,
 		GAMEPLAY
 	};

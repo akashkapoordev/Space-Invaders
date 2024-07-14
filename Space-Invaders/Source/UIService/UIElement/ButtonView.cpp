@@ -22,6 +22,7 @@ namespace UI
 				if (callback_function)
 				{
 					callback_function();
+					//printf("HI");
 				}
 			}
 		}

@@ -97,6 +97,7 @@ namespace UI
 
 		void SplashScreenUIController::destroy()
 		{
+			delete(image_view);
 			delete(animation_view);
 		}
 

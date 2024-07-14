@@ -66,4 +66,14 @@ namespace Player
 		player_controller->increaseEnemiesKilled(val);
 	}
 
+	void PlayerService::increasePlayerScore(int score)
+	{
+		player_controller->increaswPlayerScore(score);
+	}
+
+	//void PlayerService::setscore(int score)
+	//{
+	//	player_controller.setScore(score);
+	//}
+
 }
